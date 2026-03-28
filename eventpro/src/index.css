@@ -1,0 +1,530 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+}
+
+/* ================= LOGIN PAGE ================= */
+
+.login-page {
+  height: 100vh;
+  background: url("https://media.gettyimages.com/id/1307098713/photo/close-up-white-paper-desk-calendar-with-blurred-bokeh-background-appointment-and-business.jpg?s=612x612&w=0&k=20&c=a3ZK7sXFXjUxPUANyM2dVYiSnIdfkO7f49AMiQdH6z0=") no-repeat center center/cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-overlay {
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.55);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-card,
+.card {
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(12px);
+  padding: 40px;
+  border-radius: 18px;
+  width: 360px;
+  box-shadow: 0 25px 70px rgba(0, 0, 0, 0.4);
+  animation: fadeUp 0.5s ease;
+}
+
+.login-card h2,
+.card h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.login-card input,
+.card input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  outline: none;
+  transition: 0.3s;
+}
+
+.login-card input:focus,
+.card input:focus {
+  border-color: #667eea;
+  box-shadow: 0 0 5px rgba(102,126,234,0.5);
+}
+
+.login-card button,
+.card button {
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  border: none;
+  background: #667eea;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+  font-weight: 500;
+}
+
+.login-card button:hover,
+.card button:hover {
+  background: #5a67d8;
+  transform: translateY(-2px);
+}
+
+/* ================= DASHBOARD ================= */
+
+.dashboard {
+  min-height: 100vh;
+  padding: 40px;
+  color: black;
+  background: url("https://media.gettyimages.com/id/1307098713/photo/close-up-white-paper-desk-calendar-with-blurred-bokeh-background-appointment-and-business.jpg?s=612x612&w=0&k=20&c=a3ZK7sXFXjUxPUANyM2dVYiSnIdfkO7f49AMiQdH6z0=")
+    no-repeat center center/cover;
+}
+
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+
+.dashboard a {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 20px;
+  background: white;
+  color: #667eea;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.dashboard a:hover {
+  background: #f1f1f1;
+}
+
+/* ================= CALENDAR PAGE ================= */
+
+.calendar-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: url("https://media.gettyimages.com/id/1307098713/photo/close-up-white-paper-desk-calendar-with-blurred-bokeh-background-appointment-and-business.jpg?s=612x612&w=0&k=20&c=a3ZK7sXFXjUxPUANyM2dVYiSnIdfkO7f49AMiQdH6z0=") no-repeat center center/cover;
+} 
+
+.calendar-card {
+  background: white;
+  width: 850px;
+  padding: 40px;
+  border-radius: 18px;
+  box-shadow: 0 25px 70px rgba(0,0,0,0.3);
+  animation: fadeUp 0.4s ease;
+}
+
+.calendar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.calendar-header h2 {
+  font-size: 24px;
+  color: #333;
+}
+
+.calendar-header button {
+  background: #667eea;
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.calendar-header button:hover {
+  background: #5a67d8;
+  transform: translateY(-2px);
+}
+
+.week-days {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  margin-bottom: 15px;
+  text-align: center;
+  font-weight: bold;
+  color: #666;
+}
+
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 12px;
+}
+
+.calendar-day,
+.day {
+  background: #f5f7ff;
+  padding: 22px;
+  border-radius: 10px;
+  cursor: pointer;
+  text-align: center;
+  transition: 0.3s;
+  font-weight: 500;
+}
+
+.calendar-day:hover,
+.day:hover {
+  background: #667eea;
+  color: white;
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+/* ================= DAY EVENTS PAGE ================= */
+
+.day-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: url("https://media.gettyimages.com/id/1307098713/photo/close-up-white-paper-desk-calendar-with-blurred-bokeh-background-appointment-and-business.jpg?s=612x612&w=0&k=20&c=a3ZK7sXFXjUxPUANyM2dVYiSnIdfkO7f49AMiQdH6z0=") no-repeat center center/cover;
+}
+
+.day-card {
+  background: white;
+  width: 520px;
+  padding: 35px;
+  border-radius: 18px;
+  box-shadow: 0 25px 70px rgba(0,0,0,0.3);
+  animation: fadeUp 0.4s ease;
+}
+
+.day-card h2 {
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.event-input {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.event-input input {
+  flex: 1;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+}
+
+.event-input button {
+  background: #667eea;
+  color: white;
+  border-radius: 8px;
+  padding: 10px 15px;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.event-input button:hover {
+  background: #5a67d8;
+}
+
+.event-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.event-item {
+  background: #f5f7ff;
+  padding: 14px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: 0.3s;
+}
+
+.event-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+.event-item button {
+  background: transparent;
+  border: none;
+  color: red;
+  cursor: pointer;
+  font-size: 16px;
+}
+/* HOME PAGE */
+
+.home-page {
+  min-height: 100vh;
+  background: url("https://media.gettyimages.com/id/1307098713/photo/close-up-white-paper-desk-calendar-with-blurred-bokeh-background-appointment-and-business.jpg?s=612x612&w=0&k=20&c=a3ZK7sXFXjUxPUANyM2dVYiSnIdfkO7f49AMiQdH6z0=") no-repeat center center/cover;
+  color: black;
+  padding: 40px 80px;
+}
+
+.home-navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-link {
+  margin-right: 20px;
+  color: white;
+  text-decoration: none;
+}
+
+.nav-btn {
+  background: white;
+  color: #6a75d6;
+  padding: 8px 18px;
+  border-radius: 20px;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.home-hero {
+  text-align: center;
+  margin-top: 150px;
+}
+
+.home-hero h1 {
+  font-size: 50px;
+  margin-bottom: 20px;
+}
+
+.home-hero p {
+  font-size: 18px;
+  margin-bottom: 40px;
+}
+
+.hero-btn {
+  display: inline-block;
+  background: white;
+  color: #6a75d6;
+  padding: 15px 40px;
+  border-radius: 40px;
+  font-size: 18px;
+  text-decoration: none;
+}
+
+.hero-signin {
+  display: block;
+  margin-top: 15px;
+  color: white;
+  text-decoration: none;
+}
+.today {
+  border: 2px solid red;
+}
+/* HOME PAGE GLASS DESIGN */
+
+.home-page {
+  min-height: 100vh;
+  background: url("https://media.gettyimages.com/id/1307098713/photo/close-up-white-paper-desk-calendar-with-blurred-bokeh-background-appointment-and-business.jpg?s=612x612&w=0&k=20&c=a3ZK7sXFXjUxPUANyM2dVYiSnIdfkO7f49AMiQdH6z0=") no-repeat center center/cover;
+  padding: 40px 80px;
+  color: black;
+}
+
+/* NAVBAR */
+.home-navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-link {
+  margin-right: 20px;
+  color: white;
+  text-decoration: none;
+}
+
+.nav-btn {
+  background: white;
+  color: #6a75d6;
+  padding: 8px 18px;
+  border-radius: 20px;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+/* HERO GLASS CARD */
+.hero-glass {
+  margin: 100px auto 60px;
+  max-width: 800px;
+  padding: 50px;
+  text-align: center;
+
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(15px);
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+}
+
+.hero-glass h1 {
+  font-size: 40px;
+  margin-bottom: 20px;
+}
+
+.hero-glass p {
+  margin-bottom: 30px;
+  font-size: 18px;
+}
+
+.hero-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.hero-btn {
+  background: white;
+  color: #6a75d6;
+  padding: 12px 30px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.hero-outline {
+  border: 2px solid white;
+  padding: 12px 30px;
+  border-radius: 30px;
+  text-decoration: none;
+  color: #6a75d6;
+}
+
+/* FEATURE CARDS */
+.home-cards {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 50px;
+}
+
+.glass-card {
+  width: 280px;
+  padding: 30px;
+  text-align: center;
+
+  background: rgba(255,255,255,0.15);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+
+  /* DEEP BLACK SHADOW */
+  box-shadow:
+    0 25px 45px rgba(0, 0, 0, 0.85);
+
+  transition: all 0.3s ease;
+}
+
+.glass-card:hover {
+  transform: translateY(-10px);
+  box-shadow:
+    0 35px 60px rgba(0, 0, 0, 0.95);
+}
+/* TOP NAV GLASS CARD */
+
+.top-glass-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 20px 40px;
+  margin-bottom: 40px;
+
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(15px);
+  border-radius: 20px;
+  box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+}
+
+.top-left h2 {
+  font-weight: bold;
+  font-size: 22px;
+}
+
+.top-right {
+  display: flex;
+  gap: 20px;
+}
+
+/* HOME TITLE SECTION */
+
+.home-title {
+  text-align: center;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+.home-title h1 {
+  font-size: 42px;
+  margin-bottom: 10px;
+}
+
+.home-title p {
+  font-size: 18px;
+  opacity: 0.9;
+}
+/* TOP BUTTON STYLING */
+
+.top-btn {
+  padding: 8px 18px;
+  border-radius: 20px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.3s ease;
+}
+
+/* Outline Button */
+.outline-btn {
+  border: 2px solid white;
+  color:#6a75d6;
+  background: white;
+}
+
+/* Solid Button */
+.solid-btn {
+  background: white;
+  color: #6a75d6;
+}
+
+/* Hover Effects */
+.top-btn:hover {
+  transform: translateY(-2px);
+  opacity: 0.9;
+}
+/* ================= ANIMATION ================= */
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
